@@ -1,0 +1,19 @@
+server:
+  address: localhost
+  port: 5555
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simple_bank
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        hbm2ddl:
+          auto: none
+        show_sql: true
+        format_sql: false
+        use_sql_comments: false

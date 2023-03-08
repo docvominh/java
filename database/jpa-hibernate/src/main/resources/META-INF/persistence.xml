@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+    <persistence-unit name="jdbc" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!--        <class>com.vominh.example.jpa.entity.DeviceEntity</class>-->
+        <!--        <class>com.vominh.example.jpa.entity.DeviceWithVersionEntity</class>-->
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <!-- Database Connection Settings -->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/java_jdbc"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="123456"/>
+            <property name="show_sql" value="true"/>
+
+
+        </properties>
+    </persistence-unit>
+</persistence>
