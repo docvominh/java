@@ -1,0 +1,27 @@
+server:
+  address: localhost
+  port: 5000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456
+    hikari:
+      maximum-pool-size: 10
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        hbm2ddl:
+          auto: none
+        show_sql: false
+        format_sql: false
+        use_sql_comments: false

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="520.0" prefWidth="520.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vominh.example.thread.fx.controller.VideoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <!--row 0-->
+        <GridPane GridPane.rowIndex="0">
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+            </columnConstraints>
+            <TextField fx:id="url" prefHeight="25.0" prefWidth="430.0" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Button onAction="#loadUrl" prefHeight="25.0" prefWidth="47.0" text="Load" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label fx:id="message" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <!--row 1-->
+        <Label fx:id="mediaName" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+
+        <!--row 2-->
+        <Pane fx:id="mediaPane" GridPane.rowIndex="2">
+            <MediaView fx:id="mediaView" fitHeight="270.0" fitWidth="480.0"/>
+        </Pane>
+
+        <!--row 3-->
+        <GridPane GridPane.rowIndex="3">
+            <Button fx:id="play" disable="true" onAction="#play" prefHeight="25.0" prefWidth="60.0" text="Play" GridPane.columnIndex="0"/>
+            <Button fx:id="pause" onAction="#pause" prefHeight="25.0" prefWidth="60.0" text="Pause" GridPane.columnIndex="1"/>
+            <Label fx:id="videoSecond" prefHeight="17.0" prefWidth="118.0" text="00:00 / 00:00" GridPane.columnIndex="2"/>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+                <ColumnConstraints halignment="CENTER" prefWidth="200.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="100.0"/>
+            </rowConstraints>
+        </GridPane>
+
+        <!--row 4-->
+        <Label GridPane.rowIndex="4">Progress</Label>
+        <!--row 5-->
+        <ProgressBar fx:id="playBar" prefHeight="18.0" prefWidth="580.0" progress="0.0" GridPane.rowIndex="5">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ProgressBar>
+        <!--row 6-->
+        <Label fx:id="downloadLabel" GridPane.rowIndex="6">Download</Label>
+        <!--row 7-->
+        <ProgressBar fx:id="downloadBar" prefHeight="18.0" prefWidth="580.0" progress="0.0" GridPane.rowIndex="7"/>
+        <!--row 8-->
+        <Button fx:id="openCache" onAction="#openCache" text="Open Downloaded" GridPane.rowIndex="8"/>
+    </GridPane>
+</VBox>

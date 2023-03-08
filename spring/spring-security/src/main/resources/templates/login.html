@@ -1,0 +1,107 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Đăng nhập</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: flex;
+            -ms-flex-align: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <form class="form-signin" autocomplete="off" action="/login" method="post">
+        <h1 class="label is-large">Welcome</h1>
+        <div th:if="${error}" class="alert alert-danger">
+            <span>Tên đăng nhập hoặc mật khẩu không đúng</span>
+            <br/>
+        </div>
+
+        <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input type="text" id="username" name="username" class="input"
+                       placeholder="user"
+                       th:value="${username}"
+                       required autofocus
+                       oninvalid="this.setCustomValidity('Nhập mã nhân viên')"
+                       oninput="this.setCustomValidity('')"/>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input type="password" id="password" name="password" class="input"
+                       placeholder="password"
+                       th:value="${password}"
+                       required
+                       oninvalid="this.setCustomValidity('Nhập mật khẩu')"
+                       oninput="this.setCustomValidity('')"/>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lock"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" id="remember" name="remember" th:text="${' Remember'}"/>
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <button class="button is-primary is-fullwidth" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

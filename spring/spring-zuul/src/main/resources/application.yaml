@@ -1,0 +1,14 @@
+server:
+  port: 7777 # need to start spring-rest-api first
+# to test it, open http://localhost:7777/data/product/all
+
+spring:
+  main:
+    allow-circular-references: true
+
+zuul:
+  routes:
+    data:
+      path: /data/**
+      url: http://localhost:8888
+
